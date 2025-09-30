@@ -1,1 +1,1 @@
-print("Program Loaded.")
+input("Program Loaded.")
