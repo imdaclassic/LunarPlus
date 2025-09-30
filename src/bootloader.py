@@ -1,5 +1,19 @@
 import os
+import subprocess
 import sys
+def lunarplus_exists():
+    return os.path.isfile("lib/lunarplus.py")
+def run_lunarplus():
+    script_path = os.path.join("lib", "lunarplus.py")
+    try:
+        subprocess.Popen([sys.executable, script_path])
+        print(f"Started {script_path} in a separate process.")
+    except Exception as e:
+        print(f"Failed to start {script_path}: {e}")
+    finally:
+        sys.exit(0)
+if lunarplus_exists():
+    run_lunarplus()
 import tkinter as tk
 from tkinter import messagebox as msgb
 import json
