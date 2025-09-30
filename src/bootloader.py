@@ -38,3 +38,5 @@ for i in IndexData["LunarIndex"]:
     lunarver = i["ver"]
     print(f"Lunarv2_Ver: {lunarver} | Get-Link: {rawlink}")
 print("---------")
+
+input("Bootloader/plugin still in development.")
