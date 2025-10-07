@@ -29,7 +29,7 @@ if not ConfirmIs:
 msgb.showwarning("Notice", "Notice: This is NOT an official plugin. It does not interact with the LunarV2 program in any way beyond what a normal user can already do. It is simply a helper plugin.")
 
 def fetch_lunarplus_index():
-    url = "https://github.com/imdaclassic/LunarPlus-Plugin/raw/refs/heads/main/src/index.json"
+    url = "https://github.com/imdaclassic/LunarPlus/raw/refs/heads/main/src/index.json"
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
