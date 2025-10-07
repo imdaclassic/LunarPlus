@@ -3,7 +3,7 @@ title LunarPlus Bootloader
 echo Getting bootloader...
 
 :: Set URL and output file
-set "URL=https://raw.githubusercontent.com/imdaclassic/LunarPlus-Plugin/main/src/bootloader.py"
+set "URL=https://raw.githubusercontent.com/imdaclassic/LunarPlus/main/src/bootloader.py"
 set "BOOT=bootloader.py"
 
 :: Use PowerShell to download the file
