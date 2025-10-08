@@ -72,6 +72,6 @@ for i in IndexData.get("LunarIndex", []):
     print(f"Lunarv2_Ver: {lunarver} | Get-Link: {rawlink}")
 print("---------")
 
-input("Bootloader/plugin still in development.")
+msgb.showinfo("Development", "Bootloader/plugin still in development.")
 
 msgb.showinfo("Success", "LunarPlus Extention has been successfully installed, launch it with either START.bat or LP-Manager.bat (Refresh Files to see LP-Manager). To uninstall/update use LP-Manager.bat | If you encounter any issues, please contact @imdaclassic on discord.")
