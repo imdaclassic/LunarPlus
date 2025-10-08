@@ -6,7 +6,28 @@ title LunarPlus Manager
 echo Checking for local LunarPlus installation...
 echo.
 
-:: Check if the local library file exists in a 'lib' subdirectory
+:: Check for permissions
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+:: If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+    echo Requesting administrative privileges...
+    goto UACPrompt
+) else ( goto gotAdmin )
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    set params = %*:"=""
+    echo UAC.ShellExecute "cmd.exe", "/c %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+
+    "%temp%\getadmin.vbs"
+    del "%temp%\getadmin.vbs"
+    exit /B
+
+:gotAdmin
+    pushd "%CD%"
+    CD /D "%~dp0"
+
 IF EXIST "lib\lunarplus" (
     echo Found local LunarPlus library.
     echo Executing local version...
@@ -39,10 +60,6 @@ echo.
 echo ----------------------------------------
 echo Script execution finished.
 
-:: After execution, check the current filename. If it's not "LP-Manager.bat",
-:: rename it. This makes it a one-time operation.
-:: %~n0 is the filename of the current script without the extension.
-:: The /I switch makes the string comparison case-insensitive.
 IF /I NOT "%~n0"=="LP-Manager" (
     echo.
     echo Renaming this launcher to LP-Manager.bat for future use...
@@ -51,7 +68,3 @@ IF /I NOT "%~n0"=="LP-Manager" (
 )
 
 endlocal
-
-:: Optional: If your Python script exits immediately, the console window will
-:: close. You can uncomment the line below to keep it open until a key is pressed.
-:: pause
