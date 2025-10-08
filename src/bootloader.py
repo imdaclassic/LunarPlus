@@ -36,7 +36,7 @@ msgb.showwarning("Notice", "Notice: This is NOT an official extention. It does n
 msgb.showinfo("Creator", "This program was made fully by @imdaclassic on discord, you are NOT allowed to steal this plugin and rename it for your benefit, this plugin is open source on github for your own peace of mind.")
 
 def fetch_lunarplus_index():
-    primary_url = "https://github.com/imdaclassic/LunarPlus/raw/refs/heads/main/src/index.json"
+    primary_url = "https://raw.githubusercontent.com/imdaclassic/LunarPlus/main/src/index.json"
     fallback_url = "https://raw.githubusercontent.com/imdaclassic/LunarPlus/main/src/index.json"
 
     for url in (primary_url, fallback_url):
@@ -58,6 +58,7 @@ try:
     IndexData = fetch_lunarplus_index()
     if IndexData is None:
         raise RuntimeError("Both primary and fallback index fetch attempts failed.")
+        input()
 except Exception as e:
     print(f"Fatal error: {e}")
     input("Couldn't load index.json. Press Enter to exit, then try again or contact the developer.")
