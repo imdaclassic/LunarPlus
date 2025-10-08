@@ -1,2 +1,11 @@
 from tkinter import messagebox as msgb
-msgb.showwarning("Development", "Extention still in development.")
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--mode", help="Custom mode tag", default="default")
+args = parser.parse_args()
+
+if args.mode == "manage":
+    print("Running in MANAGE mode!")
+
+msgb.showwarning("Test", "This extention version is a test!")
