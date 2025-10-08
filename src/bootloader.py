@@ -26,8 +26,8 @@ print("Bootloader: ACTIVE")
 ConfirmIs = msgb.askyesno("Confirm Position", "Are you sure that this file is in the lunarV2 folder?")
 if not ConfirmIs:
     sys.exit()
-msgb.showwarning("Notice", "Notice: This is NOT an official plugin. It does not interact with the LunarV2 program in any way beyond what a normal user can already do. It is simply a helper plugin.")
-
+msgb.showwarning("Notice", "Notice: This is NOT an official extention. It does not interact with the LunarV2 program in any way beyond what a normal user can already do. It is simply a helper plugin.")
+msgb.showinfo("Creator", "This program was made fully by @imdaclassic on discord, you are NOT allowed to steal this plugin and rename it for your benefit, this plugin is open source on github for your own peace of mind.")
 def fetch_lunarplus_index():
     url = "https://github.com/imdaclassic/LunarPlus/raw/refs/heads/main/src/index.json"
     try:
@@ -54,3 +54,5 @@ for i in IndexData["LunarIndex"]:
 print("---------")
 
 input("Bootloader/plugin still in development.")
+
+msgb.showinfo("Success", "LunarPlus Extention has been successfully installed, launch it with either START.bat or LP-Manager.bat (Refresh Files to see LP-Manager). To uninstall/update use LP-Manager.bat | If you encounter any issues, please contact @imdaclassic on discord.")
