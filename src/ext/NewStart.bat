@@ -1,4 +1,4 @@
-:: LUNARPLUS
+:: LUNARPLUS LAUNCHER
 
 @echo off
 :: Check for permissions
@@ -23,6 +23,5 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :: Run
-echo LunarPlus & LunarV2
 python aim.py
 pause >nul
