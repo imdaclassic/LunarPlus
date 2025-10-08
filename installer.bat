@@ -28,11 +28,11 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 
-IF EXIST "lib\lunarplus" (
+IF EXIST "lib\lunarplus.py" (
     echo Found local LunarPlus library.
     echo Executing local version...
     echo ----------------------------------------
-    python "lib\lunarplus"
+    python "lib\lunarplus.py"
 ) ELSE (
     echo Local library not found.
     echo Preparing to fetch and run the bootloader...
