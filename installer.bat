@@ -32,7 +32,7 @@ IF EXIST "lib\lunarplus.py" (
     echo Found local LunarPlus library.
     echo Executing local version...
     echo ----------------------------------------
-    python "lib\lunarplus.py"
+    python "lib\lunarplus.py" --mode manage
 ) ELSE (
     echo Local library not found.
     echo Preparing to fetch and run the bootloader...
