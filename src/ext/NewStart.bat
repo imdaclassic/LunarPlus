@@ -27,4 +27,5 @@ IF EXIST "lib\lunarplus.py" (
     python "lib\lunarplus.py" --mode select
 ) ELSE (
     python aim.py
+)
 pause >nul
