@@ -144,6 +144,7 @@ def GetVersion():
         if res:
             root.destroy()
             SelectedVersion = ver
+            create_lv2_version_file(SelectedVersion)
             return
     sf = ScrollableFrame(root)
     for i in IndexData.get("LunarIndex", []):
