@@ -23,5 +23,8 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :: Run
-python aim.py
+IF EXIST "lib\lunarplus.py" (
+    python "lib\lunarplus.py" --mode select
+) ELSE (
+    python aim.py
 pause >nul
