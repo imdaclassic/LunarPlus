@@ -10,6 +10,12 @@ from tqdm import tqdm
 
 def lunarplus_exists():
     return os.path.isfile("lib/lunarplus.py")
+def create_lv2_version_file(content: str):
+    os.makedirs("lib", exist_ok=True)
+    file_path = os.path.join("lib", "lv2_version")
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    return file_path
 
 def run_lunarplus():
     script_path = os.path.join("lib", "lunarplus.py")
