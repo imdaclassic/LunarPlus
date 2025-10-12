@@ -7,5 +7,7 @@ args = parser.parse_args()
 
 if args.mode == "manage":
     print("Running in MANAGE mode!")
+elif args.mode == "select":
+    print("Running in SELECT mode!")
 
 msgb.showwarning("Test", "This extention version is a test!")
